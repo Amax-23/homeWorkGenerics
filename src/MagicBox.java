@@ -3,12 +3,9 @@ import java.util.Random;
 
 public class MagicBox<T> {
     private T[] items;
-    private int cell;
 
     public MagicBox(int cell) {
-        this.cell = cell;
-        T[] items = (T[]) new Object[cell];
-        this.items = items;
+        this.items = (T[]) new Object[cell];
         System.out.println("Cоздана коробка с содержимым - " + Arrays.toString(items));
     }
 
@@ -32,12 +29,11 @@ public class MagicBox<T> {
             }
         }
         if (cellFree != 0) {
-            RuntimeException e = new RuntimeException("Свободных ячеек в коробке осталось - " + cellFree + " шт.");
-            System.out.println(e);
+            throw new RuntimeException("Свободных ячеек в коробке осталось - " + cellFree + " шт.");
 
         } else {
             Random random = new Random();
-            int randomInt = random.nextInt(cell);
+            int randomInt = random.nextInt(items.length);
             System.out.println("Вам случайно выпадает  - " + items[randomInt]);
         }
     }
