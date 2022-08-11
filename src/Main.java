@@ -8,7 +8,7 @@ public class Main {
         magicBox.add(new String("Мишура"));
         magicBox.add(new String("Игры"));
         magicBox.add(new String("Хлопушка"));
-        magicBox.pick();
+        System.out.println("Случайная коробка - " + magicBox.pick());
         magicBox1.pick();
     }
 }
